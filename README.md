@@ -1,6 +1,11 @@
 # Recommender System Based on Amazon Beauty Product Ratings
 
 <br>
+This bar chart is obtained in the data preprocessing and inspection stage. We can see that most products have less than 10 ratings.
+<p align="center">
+<img width="1025" alt="Screenshot 2022-02-06 at 3 45 02 PM" src="https://user-images.githubusercontent.com/46462603/152704776-673754c4-ff20-408d-8a3c-40fdaf833b02.png">
+</p>
+<br>
 
 The program is able to find the top k users that are the most similar to a given user based on their ratings on Amazon beauty products. In this example, k is set to be equal to 5.
 <p align="center">
@@ -71,3 +76,50 @@ print("The top {} recommended products are {} ".format(m, top_products))
 ```
 Replace the value assigned to the variable m with a positive integer that you want. m will be the number of top products that you want to recommend to the chosen user. Edit the comment "# Find the top 5 recommended products" so that it matches your m value.
 
+## What have I learned
+- Used pandas to create a dataframe from the given csv file and used various functions from pandas such as head(), duplicated(), sum(), unique(), isnull(), any(), value_counts(), counts(), groupby(), sort_values(), nlargest() and numpy functions such as mean() to inspect the dataset by checking if there are duplicate rows, computing the number of ratings received by each product, and so on.
+- Used plotly.graph_objects to display interactive bar charts and histograms to visualize the different properties of the dataset such as the number of ratings and the number of users who give that amount of ratings, number of ratings and the number of products that received that amount of ratings and so on.
+- Used sklearn.preprocessing to encode alphanumerical data as numerical data.
+- Used the pandas function pivot_table to create a user-item matrix where each row corresponds to a user and each column represents a product. Each entry contains a rating. 
+- Used the cosine_similarity function from sklearn.metrics.pairwise to compute the cosine similarity between the chosen user and other users in terms of their ratings.
+
+## Main libraries or modules used
+- pandas
+- numpy
+- plotly.graph_objects
+- sklearn
+- operator
+
+## Approaches 
+In this project, I decided to explore collaborative filtering as a way to decide which products to recommend to a specific user. There are other methods to implement a recommender system such as using a content-based approach. In collaborative filtering, it is assumed that if user A and user B have similar ratings to several products, we can interpret this as the users having similar "tastes" or liking similar things. Hence, if user B likes product 123 which user A has never bought before, we can recommend product 123 to user A in hope that user A will like this product too.
+
+Cosine similarity is used to decide how similar 2 users are in terms of their ratings. I prefer cosine similarity over Euclidean distance because cosine similarity focus more on the features rather than the magnitudes. For example, by using Euclidean distance, person A who bought 100 eggs, 100 carrots, and 100 drumsticks might be considered as more similar to person B who bought 100 eggs, 100 broccolis, and 100 sausages instead of person C who bought 10 eggs, 10 carrots, and 10 drumsticks. On the other hand, cosine similarity will tell us that person A is more similar to person C than person B. 
+
+The consine similarity that I used is also "centered". This means that the ratings of all the products in the dataset are normalized for each user. This makes the ratings less biased. If these ratings are not normalized, a missing rating, which is denoted by 0, might be treated as the worst rating. A user not buying a product does not necessarily imply that the user dislikes the product. It might simply be the case that the user has not seen the product before. Hence, normalizing the ratings for each user will cause 0 ratings to be "neutral" instead of "worst".
+
+A user's rating of 5 might be the same as another user's rating of 4 in terms of how much they like a product. This is because different people define their feelings differently. Therefore, the ratings are normalized for each user to negate this difference or bias.
+
+I have also removed several entries in the dataset as the original dataset is very large and sparse. I decided to remove products that have less than or equal to 200 ratings. It is up to you to decide whether you want to leave the dataset as it is or reduce its size or sparsity in another way. 
+
+## Comments
+It is difficult to evaluate how good the model is performing. One way to do it may be choosing a user, removing his 5.0 ratings for some of the products, and checking if those products are listed in the top m recommended products or not. However, this is still not a good way to tell whether the model is performing well. If the product that the user rated 5 for does not fall into the top m recommended products, does this necessarily mean the model is not doing well? The user could equally like the other products that are recommended. 
+
+Just like most models employed in real-life settings, the best way to evaluate and implement this model is by consistently monitoring and improving it. If a user reports that he dislikes a product that this program has recommended to him, we can then adjust the model by changing how it works and reevaluate it. For example, we can try to use content-based filtering or even a mix of both content-based filtering and collaborative filtering instead. 
+
+## References
+- Matrix Normalization with Centered Cosine Similarity before using Cosine Similarity (movie recommendation system) <br>
+https://www.reddit.com/r/statistics/comments/7o4i9v/matrix_normalization_with_centered_cosine/
+- A comparison of cosine similarity vs Euclidean distance in ALS recommendation engine <br>
+https://medium.com/nerd-for-tech/a-comparison-of-cosine-similarity-vs-euclidean-distance-in-als-recommendation-engine-51898f9025e7#:~:text=According%20to%20my%20research%2C%20it's,the%20factors%20have%20actual%20meaning
+- Cosine Similarity Vs Euclidean Distance <br>
+https://medium.com/@sasi24/cosine-similarity-vs-euclidean-distance-e5d9a9375fc8
+- Why is the cosine distance used to measure the similatiry between word embedding <br>
+https://datascience.stackexchange.com/questions/81169/why-is-the-cosine-distance-used-to-measure-the-similatiry-between-word-embedding
+- Collaborative Filtering Vs Content-Based Filtering for Recommender Systems <br>
+https://analyticsindiamag.com/collaborative-filtering-vs-content-based-filtering-for-recommender-systems/
+- Collaborative filtering <br>
+https://en.wikipedia.org/wiki/Collaborative_filtering
+- Why you should remove the top products in a recommender system? <br>
+https://www.researchgate.net/post/Why_you_should_remove_the_top_products_in_a_recommender_system
+
+~ Project created in June 2021 ~
