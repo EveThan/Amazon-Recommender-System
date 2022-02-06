@@ -32,7 +32,9 @@ There are altogether 2,023,070 ratings spanning May 1996 - July 2014. All rows a
 - ratings_Beauty.csv, which can be downloaded from <a href="http://jmcauley.ucsd.edu/data/amazon/" target="_blank">Amazon product data</a> by clicking "ratings only" at the row "Beauty"
 
 ## How to use the program
-To decide the top 5 most similar users in terms of ratings and top 5 products to recommend to a random user from the dataset, simply run all the code cells in <a href="https://github.com/ZhengEnThan/Amazon-Recommender-System/blob/main/Recommender_System_for_Amazon_Customers.ipynb" target="_blank">Recommender_System_for_Amazon_Customers.ipynb</a> as they are (without editig them).
+- To decide the top 5 most similar users in terms of ratings and top 5 products to recommend to a random user from the dataset, simply run all the code cells in <a href="https://github.com/ZhengEnThan/Amazon-Recommender-System/blob/main/Recommender_System_for_Amazon_Customers.ipynb" target="_blank">Recommender_System_for_Amazon_Customers.ipynb</a> as they are (without editing them).
+
+<br> 
 
 - If you want to pick a specific user from the dataset to recommend products to (instead of a random user from the dataset), simply edit the code cell immediately below the markdown "Finding the top k users who are most similar to a chosen user". Assign the ID of the specific user that you chose to the variable user_id. Make sure that the user you chose exists in the dataset ratings_Beauty.csv. 
 
