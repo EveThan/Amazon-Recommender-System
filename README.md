@@ -53,6 +53,7 @@ print("The chosen user is: ", user_id)
 
 Replace "A21RYR788TRJZR" in the code cell above by the ID of the user that you chose.
 
+<br>
 
 - If you want to change the number of most similar users, edit the code cell immediately above the markdown "Recommending top m products to the chosen user".
 
@@ -66,6 +67,7 @@ print("The top {} users that are most similar to the chosen user are {}".format(
 
 Replace the value assigned to the variable k with a positive integer that you want. k will be the number of most similar users that you want to find. Edit the comment "# Find the top 5 users that are most similar to the chosen user" so that it matches your k value.
 
+<br>
 
 - If you want to change the number of top products to recommend to the chosen user, edit the last code cell.
 
