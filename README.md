@@ -1,7 +1,7 @@
 # Recommender System Based on Amazon Beauty Product Ratings
 
 <br>
-This bar chart is obtained in the data preprocessing and inspection stage. We can see that most products have less than 10 ratings.
+This is an example of bar charts that are obtained in the data preprocessing and inspection stage. Here, we can see that most products have less than 10 ratings.
 <p align="center">
 <img width="1025" alt="Screenshot 2022-02-06 at 3 45 02 PM" src="https://user-images.githubusercontent.com/46462603/152704776-673754c4-ff20-408d-8a3c-40fdaf833b02.png">
 </p>
