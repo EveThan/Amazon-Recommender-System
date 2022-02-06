@@ -34,7 +34,7 @@ There are altogether 2,023,070 ratings spanning May 1996 - July 2014. All rows a
 ## How to use the program
 To decide the top 5 most similar users in terms of ratings and top 5 products to recommend to a random user from the dataset, simply run all the code cells in <a href="https://github.com/ZhengEnThan/Amazon-Recommender-System/blob/main/Recommender_System_for_Amazon_Customers.ipynb" target="_blank">Recommender_System_for_Amazon_Customers.ipynb</a> as they are (without editig them).
 
-1. If you want to pick a specific user from the dataset to recommend products to (instead of a random user from the dataset), simply edit the code cell immediately below the markdown "Finding the top k users who are most similar to a chosen user". Assign the ID of the specific user that you chose to the variable user_id. Make sure that the user you chose exists in the dataset ratings_Beauty.csv. 
+- If you want to pick a specific user from the dataset to recommend products to (instead of a random user from the dataset), simply edit the code cell immediately below the markdown "Finding the top k users who are most similar to a chosen user". Assign the ID of the specific user that you chose to the variable user_id. Make sure that the user you chose exists in the dataset ratings_Beauty.csv. 
 
 Edit the code cell to look like this:
 
@@ -53,7 +53,8 @@ print("The chosen user is: ", user_id)
 
 Replace "A21RYR788TRJZR" in the code cell above by the ID of the user that you chose.
 
-2. If you want to change the number of most similar users, edit the code cell immediately above the markdown "Recommending top m products to the chosen user".
+
+- If you want to change the number of most similar users, edit the code cell immediately above the markdown "Recommending top m products to the chosen user".
 
 ```python
 # Find the top 5 users that are most similar to the chosen user
@@ -65,7 +66,8 @@ print("The top {} users that are most similar to the chosen user are {}".format(
 
 Replace the value assigned to the variable k with a positive integer that you want. k will be the number of most similar users that you want to find. Edit the comment "# Find the top 5 users that are most similar to the chosen user" so that it matches your k value.
 
-3. If you want to change the number of top products to recommend to the chosen user, edit the last code cell.
+
+- If you want to change the number of top products to recommend to the chosen user, edit the last code cell.
 
 ```python
 # Find the top 5 recommended products
