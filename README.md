@@ -82,7 +82,7 @@ print("The top {} recommended products are {} ".format(m, top_products))
 ```
 Replace the value assigned to the variable m with a positive integer that you want. m will be the number of top products that you want to recommend to the chosen user. Edit the comment "# Find the top 5 recommended products" so that it matches your m value.
 
-## What have I learned
+## What I have learned
 - Used pandas to create a dataframe from the given csv file and used various functions from pandas such as head(), duplicated(), sum(), unique(), isnull(), any(), value_counts(), counts(), groupby(), sort_values(), nlargest() and numpy functions such as mean() to inspect the dataset by checking if there are duplicate rows, computing the number of ratings received by each product, and so on.
 - Used plotly.graph_objects to display interactive bar charts and histograms to visualize the different properties of the dataset such as the number of ratings and the number of users who give that amount of ratings, number of ratings and the number of products that received that amount of ratings and so on.
 - Used sklearn.preprocessing to encode alphanumerical data as numerical data.
