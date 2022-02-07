@@ -1,4 +1,4 @@
-# Recommender System Based on Amazon Beauty Product Ratings
+# Recommender System Based on Amazon Beauty Product Ratings using Collaborative Filtering
 
 <br>
 This is an example of bar charts that are obtained in the data preprocessing and inspection stage. Here, we can see that most products have less than 10 ratings.
