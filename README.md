@@ -96,7 +96,7 @@ Replace the value assigned to the variable m with a positive integer that you wa
 - sklearn
 - operator
 
-## Approach
+## Approaches
 In this project, I decided to explore collaborative filtering as a way to decide which products to recommend to a specific user. There are other methods to implement a recommender system such as using a content-based approach. In collaborative filtering, it is assumed that if user A and user B have similar ratings to several products, we can interpret this as the users having similar "tastes" or liking similar things. Hence, if user B likes product 123 which user A has never bought before, we can recommend product 123 to user A in hope that user A will like this product too.
 
 Cosine similarity is used to decide how similar 2 users are in terms of their ratings. I prefer cosine similarity over Euclidean distance because cosine similarity focus more on the features rather than the magnitudes. For example, by using Euclidean distance, person A who bought 100 eggs, 100 carrots, and 100 drumsticks might be considered as more similar to person B who bought 100 eggs, 100 broccolis, and 100 sausages instead of person C who bought 10 eggs, 10 carrots, and 10 drumsticks. On the other hand, cosine similarity will tell us that person A is more similar to person C than person B. 
